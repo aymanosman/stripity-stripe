@@ -86,6 +86,7 @@ defmodule Stripe.StripeMock do
   defp kill_stripe_mock(manager_pid) do
     Logger.debug("Killing stripe_mock")
 
+    # BUMP
     case :exec.stop(manager_pid) do
       :ok ->
         :ok
