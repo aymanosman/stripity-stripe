@@ -80,13 +80,12 @@ defmodule Stripe.StripeMock do
       end
 
     Logger.debug("Starting stripe_mock on port #{port}")
-    :exec.run([executable | port_args], [:monitor, :stdout, :stderr])
+    Exexec.run([executable | port_args], monitor: true, stdout: true, stderr: true)
   end
 
   defp kill_stripe_mock(manager_pid) do
     Logger.debug("Killing stripe_mock")
 
-    # BUMP
     case :exec.stop(manager_pid) do
       :ok ->
         :ok
