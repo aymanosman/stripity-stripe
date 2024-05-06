@@ -13,7 +13,7 @@ defmodule Stripe.CreditNoteTest do
 
       assert_stripe_requested(
         :get,
-        "/v1/credit_notes/preview?invoice=in_173uNd4Wq104wst7Gf4dgq1Y&amount=500"
+        "/v1/credit_notes/preview?invoice=amount=500&in_173uNd4Wq104wst7Gf4dgq1Y"
       )
     end
   end
